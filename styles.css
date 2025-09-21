@@ -1,0 +1,226 @@
+:root {
+  --blue: #0077ff;
+  --lime: #a8ff00;
+  --orange: #ff8800;
+  --light: #ffffff;
+  --dark: #111111;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f8f9fb;
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* NAVBAR */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(17, 17, 17, 0.9);
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: var(--light);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--light);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--lime);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--light);
+  font-size: 1.8rem;
+}
+
+/* HERO */
+#hero {
+  position: relative;
+  height: 100vh;
+  background: url("https://source.unsplash.com/1600x900/?technology,workspace") no-repeat center center/cover;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light);
+  text-align: center;
+}
+
+.hero-overlay {
+  background: linear-gradient(120deg, rgba(0,119,255,0.7) 60%, rgba(255,136,0,0.6) 20%, rgba(168,255,0,0.5) 10%);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.hero-text h1 {
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text span {
+  color: var(--lime);
+}
+
+.hero-text p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.hero-text .btn {
+  background: var(--orange);
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.hero-text .btn:hover {
+  background: var(--blue);
+}
+
+/* SECTIONS */
+section {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* PROJECTS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+}
+
+/* CONTACT */
+.contact-buttons {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.contact-btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s;
+}
+
+.contact-btn:hover {
+  transform: scale(1.05);
+}
+
+.whatsapp { background: #25d366; }
+.call { background: var(--blue); }
+.email { background: var(--orange); }
+.linkedin { background: #0077b5; }
+
+/* FOOTER */
+footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(17, 17, 17, 0.95);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    text-align: right;
+    padding: 1rem;
+  }
+
+  .nav-links li {
+    margin: 1rem 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+}
